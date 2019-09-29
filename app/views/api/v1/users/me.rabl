@@ -1,0 +1,1 @@
+node(:user) { partial("api/v1/users/user", object: @user) }
