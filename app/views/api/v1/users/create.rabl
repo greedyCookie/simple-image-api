@@ -1,4 +1,4 @@
-object false
+object @user => false
 node(:access_token) { @access_token.token }
 
-node(:user) { partial("api/v1/users/user", object: @user) }
+extends "api/v1/users/user", object: @user

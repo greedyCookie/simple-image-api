@@ -1,5 +1,6 @@
 class User
   include Mongoid::Document
+  include Mongoid::Timestamps::Created
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -13,6 +14,8 @@ class User
            foreign_key: :resource_owner_id,
            dependent: :delete_all
 
+  embeds_many :images
+
   ## Database authenticatable
   field :email,              type: String, default: ""
   field :encrypted_password, type: String, default: ""
@@ -23,6 +26,7 @@ class User
 
   ## Rememberable
   field :remember_created_at, type: Time
+
 
   def create_token(app_id)
     Doorkeeper::AccessToken.create!(application_id: app_id, resource_owner_id: id)

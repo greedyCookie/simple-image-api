@@ -28,7 +28,8 @@
 /node_modules
 
 
-
+/public/tmp
+/public/uploads
 /public/packs
 /public/packs-test
 /node_modules

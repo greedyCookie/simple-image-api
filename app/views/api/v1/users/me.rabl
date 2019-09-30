@@ -1,1 +1,3 @@
-node(:user) { partial("api/v1/users/user", object: @user) }
+object @user => false
+
+extends "api/v1/users/user", object: @user

@@ -36,4 +36,11 @@ class Api::ApiController < ActionController::Base
   def current_user
     current_resource_owner
   end
+
+  def check_app
+    return render json: {application: { invalid: "required client id and secret" } }, status: :not_found unless params['client_id'].present? && params['client_secret'].present?
+    @app = Doorkeeper::Application.find_by({:uid => params['client_id'], :secret => params['client_secret']})
+    return render json: {application: { invalid: "api not fount" } }, status: :not_found if @app.nil?
+    @app
+  end
 end
