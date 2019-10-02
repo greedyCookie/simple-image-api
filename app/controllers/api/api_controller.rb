@@ -7,8 +7,6 @@ class Api::ApiController < ActionController::Base
 
   protect_from_forgery with: :null_session
 
-  rescue_from Exception, with: :handle_exception
-
   before_action :current_resource_owner
 
 

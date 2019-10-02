@@ -13,6 +13,6 @@ class Image
   field :width, type: Integer
 
   validates :content, presence: true
-  validates :height, presence: true
-  validates :width, presence: true
+  validates :height, presence: true, numericality: { only_integer: true, greater_than: 0 }
+  validates :width, presence: true, numericality: { only_integer: true, greater_than: 0 }
 end

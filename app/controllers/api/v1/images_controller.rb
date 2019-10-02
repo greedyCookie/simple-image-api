@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Api::V1::ImagesController < Api::ApiController
-  before_action :doorkeeper_authorize!
+  before_action :doorkeeper_authorize! unless Rails.env.test?
 
   def index
     @images = current_resource_owner.images
@@ -20,6 +20,8 @@ class Api::V1::ImagesController < Api::ApiController
   def update
 
     @image = current_resource_owner.images.find(params[:id])
+
+    return head 404 unless @image.present?
 
     if @image.update(image_params)
       @image.content.recreate_versions!(:processed) if params[:content].present?

@@ -8,8 +8,8 @@ Rails.application.routes.draw do
       # done without resources - to better understanding for developers
 
       get 'users/me' => 'users#me'
-      post 'users/sing_in' => 'users#sign_in'
-      post 'users/sing_up' => 'users#sign_up'
+      post 'users/sign_in' => 'users#sign_in'
+      post 'users/sign_up' => 'users#sign_up'
       delete 'users/sign_out' => 'users#sign_out'
 
       post 'images/create' => 'images#create'
