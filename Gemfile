@@ -26,7 +26,7 @@ gem 'carrierwave', '~> 2.0'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 
 gem 'mongoid', '~> 6.0'
-gem 'doorkeeper', '~> 5.0.0'
+gem 'doorkeeper', '~> 5.0.3'
 gem 'doorkeeper-mongodb', '~> 5.0.0'
 # gem 'activemodel-serializers-xml'
 gem 'devise'
