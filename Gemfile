@@ -22,7 +22,7 @@ gem 'jbuilder', '~> 2.7'
 
 
 gem 'bson_ext'
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 2.1'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 
 gem 'mongoid', '~> 6.0'
